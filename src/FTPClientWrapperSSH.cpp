@@ -22,6 +22,7 @@
 #include "MessageDialog.h"
 #include "KBIntDialog.h"
 #include <fcntl.h>
+#include <libssh/server.h>
 
 #ifdef strdup	//undefine strdup form libssh
 #undef strdup
@@ -79,6 +80,13 @@ int FTPClientWrapperSSH::Disconnect() {
 	m_connected = false;
 
 	return OnReturn(0);
+}
+
+int FTPClientWrapperSSH::SendKeepAlive() {
+	if (!m_connected)
+		return OnReturn(0);
+
+	return ssh_send_keepalive(m_sshsession);
 }
 
 int FTPClientWrapperSSH::GetDir(const char * path, FTPFile** files) {

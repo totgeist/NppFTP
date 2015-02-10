@@ -39,6 +39,7 @@ public:
 	virtual					~FtpSSLWrapper();
 
 	virtual int				Send(LPCSTR data, int len);
+	virtual int				SendKeepAlive();
 
 	virtual	int				SetProgressMonitor(ProgressMonitor * progmon);
 	virtual int				SetAborted(BOOL aborted);
@@ -81,6 +82,7 @@ public:
 
 	virtual int				Connect() = 0;
 	virtual int				Disconnect() = 0;
+	virtual int				SendKeepAlive() = 0;
 
 	//Don't forget to call releasedir
 	virtual int				GetDir(const char * path, FTPFile** files) = 0;
@@ -133,6 +135,7 @@ public:
 
 	virtual int				Connect();
 	virtual int				Disconnect();
+	virtual int				SendKeepAlive();
 
 	virtual int				GetDir(const char * path, FTPFile** files);
 
@@ -193,6 +196,7 @@ public:
 
 	virtual int				Connect();
 	virtual int				Disconnect();
+	virtual int				SendKeepAlive();
 
 	virtual int				GetDir(const char * path, FTPFile** files);
 

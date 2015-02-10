@@ -97,6 +97,13 @@ int FTPClientWrapperSSL::Disconnect() {
 	return OnReturn((retcode == UTE_SUCCESS)?0:-1);
 }
 
+int FTPClientWrapperSSL::SendKeepAlive() {
+	if (!m_connected)
+		return OnReturn(0);
+
+	return m_client.SendKeepAlive();
+}
+
 int FTPClientWrapperSSL::GetDir(const char * path, FTPFile** files) {
 	int retcode = 0;
 	CUT_DIRINFO di;
@@ -470,6 +477,10 @@ int FtpSSLWrapper::Send(LPCSTR data, int len) {
 	delete [] datacpy;
 
 	return CUT_WSClient::Send(data, len);
+}
+
+int FtpSSLWrapper::SendKeepAlive() {
+    return CUT_FTPClient::NoOp();
 }
 
 int FtpSSLWrapper::SetProgressMonitor(ProgressMonitor * progmon) {
