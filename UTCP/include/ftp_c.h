@@ -24,7 +24,7 @@
 // =================================================================
 // Ultimate TCP/IP v4.2
 // This software along with its related components, documentation and files ("The Libraries")
-// is © 1994-2007 The Code Project (1612916 Ontario Limited) and use of The Libraries is
+// is @ 1994-2007 The Code Project (1612916 Ontario Limited) and use of The Libraries is
 // governed by a software license agreement ("Agreement").  Copies of the Agreement are
 // available at The Code Project (www.codeproject.com), as part of the package you downloaded
 // to obtain this file, or directly from our office.  For a copy of the license governing
@@ -100,6 +100,7 @@ public:
 // directory infomation linked list - ascii fileName for internal use
 typedef struct CUT_DIRINFOATag{
 	char fileName[MAX_PATH+1];	// file or directory name
+	char          mod[11];
 	long fileSize;				// size of directory or file in bytes
 	int  day;					// the day digit of the file date
 	int  month;					// the month digit of the file date
@@ -113,6 +114,7 @@ typedef struct CUT_DIRINFOATag{
 // _TCHAR for UI
 typedef struct CUT_DIRINFOTag{
 	_TCHAR fileName[MAX_PATH+1];	// file or directory name
+	_TCHAR          mod[11];
 	long fileSize;				// size of directory or file in bytes
 	int  day;					// the day digit of the file date
 	int  month;					// the month digit of the file date
