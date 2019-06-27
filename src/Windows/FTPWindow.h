@@ -30,6 +30,7 @@
 #include "OutputWindow.h"
 #include "SettingsDialog.h"
 #include "ProfilesDialog.h"
+#include "ProfilesSearch.h"
 #include "DragDropSupport.h"
 #include "DragDropWindow.h"
 
@@ -105,6 +106,7 @@ protected:
 	QueueWindow				m_queueWindow;
 	SettingsDialog			m_settingsDialog;
 	ProfilesDialog			m_profilesDialog;
+	ProfilesSearch			m_profilesSearch;
 	WindowSplitter			m_splitter;
 
 	OutputWindow			m_outputWindow;

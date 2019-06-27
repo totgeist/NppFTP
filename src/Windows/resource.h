@@ -120,4 +120,8 @@
 	#define IDC_EDIT_PROMPTMAX			182
 	#define IDC_EDIT_ANSWERMAX			183
 	#define IDC_STATIC_MARKER			184
+#define IDD_DIALOG_SEARCH				195
+	#define IDC_LIST_PROFILES_SEARCH	196
+	#define IDC_FILTER					197
+	#define IDC_CONNECT					198
 //next id:								195

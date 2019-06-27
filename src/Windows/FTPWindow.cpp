@@ -177,7 +177,7 @@ int FTPWindow::Init(FTPSession * session, vProfile * vProfiles, FTPSettings * ft
 	m_ftpSession = session;
 	m_vProfiles = vProfiles;
 	m_ftpSettings = ftpSettings;
-
+	
 	OnProfileChange();
 	m_splitter.SetRatio(m_ftpSettings->GetSplitRatio());
 	m_outputShown = m_ftpSettings->GetOutputShown();
@@ -207,7 +207,6 @@ int FTPWindow::OnSize(int newWidth, int newHeight) {
 int FTPWindow::OnProfileChange() {
 	if (!m_vProfiles)
 		return -1;
-
 	::DestroyMenu(m_popupProfile);
 	m_popupProfile = ::CreatePopupMenu();
 	for(size_t i = 0; i < m_vProfiles->size(); i++) {
@@ -480,7 +479,8 @@ LRESULT FTPWindow::MessageProc(UINT uMsg, WPARAM wParam, LPARAM lParam) {
 									m_ftpSession->TerminateSession();
 									return TBDDRET_DEFAULT;
 								}
-								result = m_toolbar.DoDropDown(IDB_BUTTON_TOOLBAR_CONNECT);
+								result = m_profilesSearch.Create(m_hwnd, this, m_vProfiles,m_ftpSession);
+								//result = m_toolbar.DoDropDown(IDB_BUTTON_TOOLBAR_CONNECT);
 								break; }
 							case IDB_BUTTON_TOOLBAR_SETTINGS: {
 								result = m_toolbar.DoDropDown(IDB_BUTTON_TOOLBAR_SETTINGS);
