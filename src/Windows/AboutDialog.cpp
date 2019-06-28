@@ -65,6 +65,8 @@ INT_PTR AboutDialog::OnInitDialog() {
 		TEXT("Maintained by Ashish Kulkarni (kulkarni.ashish@gmail.com)\r\n")
 		TEXT("and Christian Grasser (christian.grasser@web.de)\r\n")
 		TEXT("\r\n")
+		TEXT("Search feature has been added by Mustafa Öztürk (info@totgeist.com)\r\n")
+		TEXT("\r\n")
 		TEXT("Press Show FTP Window to get started, and read the documentation (if any) when you get stuck.\r\n")
 		TEXT("For help, info and updates, visit the site by clicking the button below.\r\n")
 		TEXT("\r\n")
